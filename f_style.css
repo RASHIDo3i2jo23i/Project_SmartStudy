@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4CAF50;
+  --background-color: #f7f8fa;
+  --text-color: #1f2933;
+  --card-background: #ffffff;
+}
+
+/* Dark mode */
+body.dark {
+  --background-color: #121212;
+  --text-color: #f5f5f5;
+  --card-background: #1e1e1e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.btn {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 1.6rem;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Inputs */
+.form-group {
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1.1rem 1.3rem;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 1.05rem;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.form-group textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+}
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #4CAF50, #3aa845);
+  color: white;
+}
+
+.sidebar h2 {
+  text-align: center;
+  padding: 1.5rem;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 1rem 1.2rem;
+}
+
+.sidebar li a,
+.sidebar li button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 1.05rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sidebar li a:hover,
+.sidebar li button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1300px;
+}
+
+/* Sections */
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Cards */
+.goal-list li,
+.task-list li,
+.diary-list li {
+  background: var(--card-background);
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+/* Goals inputs layout */
+.goal-inputs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.goal-inputs input {
+  flex: 1;
+}
+
+/* GPA */
+.gpa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.gpa-table th,
+.gpa-table td {
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.gpa-table input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+/* Analytics fix */
+.analytics-card {
+  background: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 18px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+/* Chat & timer */
+.timer-display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.chat-box {
+  height: 350px;
+  border-radius: 16px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+  background: var(--card-background);
+}
+/* ===== FORCE BIG UI MODE ===== */
+
+/* растягиваем весь контент */
+.main-content {
+  max-width: none !important;
+}
+
+/* все поля ввода огромные */
+input, textarea {
+  width: 100% !important;
+  min-height: 70px !important;
+  font-size: 22px !important;
+  padding: 18px 22px !important;
+  border-radius: 18px !important;
+}
+
+/* кнопки огромные */
+.btn, button {
+  font-size: 22px !important;
+  padding: 18px 30px !important;
+  border-radius: 18px !important;
+}
+
+/* строки в goals/tasks */
+.goal-list li,
+.task-list li {
+  min-height: 70px !important;
+  font-size: 20px !important;
+  padding: 18px 22px !important;
+  border-radius: 18px !important;
+}
+
+/* таблица GPA */
+.gpa-table input {
+  min-height: 65px !important;
+  font-size: 20px !important;
+}
+
+/* сайдбар кнопки */
+.sidebar button {
+  font-size: 20px !important;
+  padding: 16px 20px !important;
+}
+
+/* заголовки */
+h2 {
+  font-size: 36px !important;
+}
+h3 {
+  font-size: 26px !important;
+}
+
+/* блок добавления цели */
+.goal-inputs {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr auto !important;
+  gap: 16px !important;
+}
+/* ===== FORCE BIG UI MODE ===== */
+
+/* растягиваем весь контент */
+.main-content {
+  max-width: none !important;
+}
+
+/* все поля ввода огромные */
+input, textarea {
+  width: 100% !important;
+  min-height: 70px !important;
+  font-size: 22px !important;
+  padding: 18px 22px !important;
+  border-radius: 18px !important;
+}
+
+/* кнопки огромные */
+.btn, button {
+  font-size: 22px !important;
+  padding: 18px 30px !important;
+  border-radius: 18px !important;
+}
+
+/* строки в goals/tasks */
+.goal-list li,
+.task-list li {
+  min-height: 70px !important;
+  font-size: 20px !important;
+  padding: 18px 22px !important;
+  border-radius: 18px !important;
+}
+
+/* таблица GPA */
+.gpa-table input {
+  min-height: 65px !important;
+  font-size: 20px !important;
+}
+
+/* сайдбар кнопки */
+.sidebar button {
+  font-size: 20px !important;
+  padding: 16px 20px !important;
+}
+
+/* заголовки */
+h2 {
+  font-size: 36px !important;
+}
+h3 {
+  font-size: 26px !important;
+}
+
+/* блок добавления цели */
+.goal-inputs {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr auto !important;
+  gap: 16px !important;
+}

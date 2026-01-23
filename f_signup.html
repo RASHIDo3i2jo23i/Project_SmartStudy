@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartStudy – Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Подключаем современный шрифт и стили -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <h2>SmartStudy Sign Up</h2>
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="signup-name">Name</label>
+        <input type="text" id="signup-name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" placeholder="●●●●●●●●" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <p>Already have an account? <a href="index.html">Login here</a></p>
+      <p class="error" id="signup-error"></p>
+    </form>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>
